@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+.App {
+  margin: 0; /* Ensure no default margins */
+  padding: 0; /* Ensure no default padding */
+  background-image: url("/Users/mymac/Desktop/rep project/my-react-app/src/assets/Screenshot 2024-03-14 at 4.38.02 PM.png");
+  background-size: cover; /* Cover the entire background */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  background-position: center; /* Center the background image */
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: inherit;
+}
+.main {
+  margin-bottom: 100px;
+  text-align: center;
+}

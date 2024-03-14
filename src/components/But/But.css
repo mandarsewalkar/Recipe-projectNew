@@ -1,0 +1,14 @@
+.ran-but {
+  cursor: pointer;
+  background: #ffcd68;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 50px;
+  width: 125px;
+  text-align: center;
+}
+
+.ran-but:hover {
+  text-decoration: none;
+  text-transform: none;
+}
