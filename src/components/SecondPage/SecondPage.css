@@ -1,0 +1,24 @@
+.Custom_Recipe {
+  justify-content: space-around;
+  width: 800px;
+  height: 200px;
+}
+.Veg {
+  background-color: rgb(17, 189, 17) !important;
+}
+.nonveg {
+  background-color: #ff1717de;
+}
+.Egg {
+  background-color: #ffeb3b;
+}
+.inherit {
+  height: inherit;
+  width: inherit;
+}
+.v2-align {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

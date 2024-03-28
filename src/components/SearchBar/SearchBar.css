@@ -19,11 +19,6 @@
   text-align: center;
 }
 
-.center {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 .inline {
   width: 250px;
   font-size: 14px;
@@ -41,9 +36,4 @@ input {
 .input {
   width: 230px;
   padding-left: 20px;
-}
-.v-align {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }

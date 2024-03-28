@@ -1,0 +1,27 @@
+.overlaysq {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure it appears on top */
+}
+
+.overlay-contentsq {
+  width: 550px;
+  height: 550px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+.a100 {
+  height: 100%;
+  width: 100%;
+}
+.h80 {
+  height: 91%;
+}

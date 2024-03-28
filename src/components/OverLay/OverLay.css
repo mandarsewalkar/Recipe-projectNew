@@ -1,0 +1,26 @@
+/* OverLay.css */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 999; /* Ensure it appears on top */
+}
+
+.overlay-content {
+  height: inherit;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 0%; /* Adjust left positioning as needed */
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 0px 5px 5px 0px;
+  transition: left 0.3s ease;
+}
+.pad20 {
+  padding: 20px;
+}

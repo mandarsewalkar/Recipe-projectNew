@@ -1,12 +1,11 @@
-import "/Users/mymac/Desktop/rep project/my-react-app/src/components/But/But.css";
+import React from "react";
+import "./But.css";
 
-function But({ text, fun }) {
+function But({ text, className, fun }) {
   return (
-    <>
-      <div className="ran-but" onClick={fun}>
-        {text}
-      </div>
-    </>
+    <div className={`ran-but ${className}`} onClick={fun}>
+      {text}
+    </div>
   );
 }
 

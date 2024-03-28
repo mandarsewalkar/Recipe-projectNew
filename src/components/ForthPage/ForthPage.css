@@ -1,0 +1,64 @@
+/* .ForthPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.Recipe-div {
+  text-align: center;
+  height: 700px;
+  width: 500px;
+}
+
+.Recipe-div h1 {
+  font-weight: bold;
+} */
+
+.ForthPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.LeftBar,
+.RightBar {
+  flex: 1;
+  height: 700px;
+}
+
+.LeftBar {
+  height: 100%;
+  width: 200px;
+  margin: 10px;
+}
+
+.Recipe-div {
+  text-align: center;
+  height: 100%;
+  width: 400px;
+  margin: 10px;
+}
+.RecipeHead {
+  text-align: center;
+  height: 700px;
+  width: 400px;
+  margin: 10px;
+}
+
+.RightBar {
+  text-align: center;
+  height: 100%;
+  width: 200px;
+  margin: 10px;
+}
+
+.Recipe-div h1 {
+  font-weight: bold;
+}
+
+.GuidanceBar {
+  position: relative;
+  top: 80%;
+}
