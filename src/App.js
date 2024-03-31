@@ -94,6 +94,7 @@ function App() {
       {page === 2 && !signUp && (
         <IngredientsPage fun={homePage} recipes={recipes} />
       )}
+      {page === 3 && <ForthPage />}
 
       {signUp && <SignUp fun={Sign} />}
       {/* Render other pages here */}
