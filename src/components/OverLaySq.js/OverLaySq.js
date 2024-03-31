@@ -9,7 +9,7 @@ import Cross from "../Cancel/Cancel";
 export default function OverLaySq({ fun, overLay, fun3, text }) {
   const storedData = localStorage.getItem("formDataList");
   const data = JSON.parse(storedData);
-  const { user, setUser } = useContext(MainContext);
+  const { setUser } = useContext(MainContext);
 
   // State variables
   const [correct, setCorrect] = useState(false);
