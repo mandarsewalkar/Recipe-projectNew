@@ -7,7 +7,7 @@ export default function Input(props) {
   return (
     <div>
       <div>
-        <label htmlFor={htmlFor}>{htmlFor}:</label>
+        <label htmlFor={htmlFor}>{htmlFor} :</label>
       </div>
       <div>
         <input

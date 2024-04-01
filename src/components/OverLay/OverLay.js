@@ -9,11 +9,10 @@ export default function OverLay({ fun, overLay, fun2 }) {
       <div
         className={`overlay-content ${overLay ? "overlay-content-active" : ""}`}
       >
-        <div className="pad20 h-alignBet">
-          <div>
-            <Filter1 fun2={fun2} />
+        <div className="h-alignBet inherit">
+          <div className="inherit">
+            <Filter1 fun2={fun2} fun={fun} />
           </div>
-          <Cross fun={fun} />
         </div>
       </div>
     </div>

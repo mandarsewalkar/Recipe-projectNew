@@ -7,13 +7,15 @@ const MainState = (props) => {
   const [isEditing, setIsEditing] = useState(false);
   const [user, setUser] = useState(null);
   const [classStates, setClassStates] = useState([true, true, true]);
+  const [SessionId, setSessionId] = useState(null);
+  const [Sym, setSym] = useState(null);
 
   return (
     <MainContext.Provider
       value={{
         inputValue,
-        history,
         setInputValue,
+        history,
         setHistory,
         isEditing,
         setIsEditing,
@@ -21,6 +23,10 @@ const MainState = (props) => {
         setUser,
         classStates,
         setClassStates,
+        SessionId,
+        setSessionId,
+        Sym,
+        setSym,
       }}
     >
       {props.children}

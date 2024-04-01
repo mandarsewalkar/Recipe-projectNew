@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./style";
+import Input from "../Input/Input";
 
 export default function SignUp({ fun }) {
   const [formDataList, setFormDataList] = useState(() => {
@@ -15,6 +16,7 @@ export default function SignUp({ fun }) {
     event.preventDefault();
 
     const formData = {
+      Name: event.target.Name.value,
       email: event.target.email.value,
       password: event.target.password.value,
       confirmPassword: event.target.confirmPassword.value,
@@ -61,6 +63,33 @@ export default function SignUp({ fun }) {
     localStorage.setItem("formDataList", JSON.stringify(formDataList));
   }, [formDataList]);
 
+  const inputs = [
+    {
+      label: "Name",
+      type: "text",
+      id: "Name",
+      onChange: null,
+    },
+    {
+      label: "Email",
+      type: "email",
+      id: "email",
+      onChange: handleEmailChange,
+    },
+    {
+      label: "Password",
+      type: "password",
+      id: "password",
+      onChange: handlePasswordChange,
+    },
+    {
+      label: "Confirm Password",
+      type: "password",
+      id: "confirmPassword",
+      onChange: handlePasswordChange,
+    },
+  ];
+
   return (
     <div className="h-align inherit " style={style.bgcWhite}>
       <div className="inherit , v-align">
@@ -69,46 +98,25 @@ export default function SignUp({ fun }) {
           <div style={style.height}>
             <form className="inherit" onSubmit={handleSubmit}>
               <div className="inherit , v-align" style={style.padding}>
-                <div>
-                  <div>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                      type="email"
-                      id="email"
-                      style={style.border}
-                      required
-                      onChange={handleEmailChange}
+                {inputs.map((input, index) => (
+                  <div key={index}>
+                    <Input
+                      value={input.value}
+                      onChange={input.onChange}
+                      id={input.id}
+                      type={input.type}
+                      htmlFor={input.label}
                     />
-                    {!emailMatch && (
+                    {!emailMatch && input.id === "email" && (
                       <p style={style.error}>E-mail is already taken</p>
                     )}
+                    {!passwordMatch && input.id === "confirmPassword" && (
+                      <p style={style.error}>
+                        Password and Confirm Password do not match.
+                      </p>
+                    )}
                   </div>
-                </div>
-                <div>
-                  <label htmlFor="password">Password:</label>
-                  <input
-                    type="password"
-                    id="password"
-                    style={style.border}
-                    required
-                    onChange={handlePasswordChange}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="confirmPassword">Confirm Password:</label>
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    style={style.border}
-                    required
-                    onChange={handlePasswordChange}
-                  />
-                  {!passwordMatch && (
-                    <p style={style.error}>
-                      Password and Confirm Password do not match.
-                    </p>
-                  )}
-                </div>
+                ))}
               </div>
               <div className="h-align">
                 <button

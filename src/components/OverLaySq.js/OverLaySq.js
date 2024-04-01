@@ -6,10 +6,11 @@ import style from "../Input/style";
 import Form from "../Form/Form";
 import Cross from "../Cancel/Cancel";
 
-export default function OverLaySq({ fun, overLay, fun3, text }) {
+export default function OverLaySq(props) {
+  const { fun, overLay, fun3, text } = props;
   const storedData = localStorage.getItem("formDataList");
   const data = JSON.parse(storedData);
-  const { setUser } = useContext(MainContext);
+  const { setUser, SessionId, setSessionId } = useContext(MainContext);
 
   // State variables
   const [correct, setCorrect] = useState(false);
@@ -21,16 +22,20 @@ export default function OverLaySq({ fun, overLay, fun3, text }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("Email:", email); // Debug logging
-    console.log("Password:", password); // Debug logging
+    console.log("Email:", email);
+    console.log("Password:", password);
 
     const foundUser = data.find((user) => user.email === email);
 
     if (foundUser && foundUser.password === password) {
+      console.log("Name:", foundUser.Name);
       setCorrect(true);
       console.log("Sign-in successful!");
       fun(() => fun);
-      setUser(email);
+      setUser(foundUser.Name);
+      const ID = Math.floor(Math.random() * 99999);
+      setSessionId(ID);
+      console.log(SessionId);
     } else {
       setCorrect(false);
       console.log("Email or password is incorrect.");

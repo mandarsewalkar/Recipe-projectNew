@@ -42,3 +42,12 @@
   flex-direction: row;
   justify-content: flex-end;
 }
+.flexFit {
+  flex-grow: 1;
+}
+.gap {
+  gap: 20px;
+}
+h3 {
+  margin: 0px;
+}

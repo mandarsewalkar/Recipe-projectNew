@@ -5,6 +5,8 @@ export default function IngredientsPage({ fun, recipes }) {
   const randomIndex = Math.floor(Math.random() * recipes.length);
   const recipe = recipes[randomIndex];
 
+  // console.log(recipes);
+
   return (
     <div className="v-align , inherit">
       <div className="h-align">

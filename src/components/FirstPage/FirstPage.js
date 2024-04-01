@@ -8,6 +8,7 @@ import OverLay from "../OverLay/OverLay";
 import OverLaySq from "../OverLaySq.js/OverLaySq";
 import Profile from "../Profile/Profile";
 import style from "./FirstPageStyle";
+import generateBackgroundColors from "../color/color";
 
 export default function FirstPage({ fun, fun2, fun3 }) {
   const {
@@ -17,6 +18,11 @@ export default function FirstPage({ fun, fun2, fun3 }) {
     history,
     isEditing,
     setIsEditing,
+    SessionId,
+    setSessionId,
+    user,
+    Sym,
+    setSym,
   } = useContext(MainContext);
 
   const [overLay, setOverLay] = useState(false);
@@ -24,7 +30,7 @@ export default function FirstPage({ fun, fun2, fun3 }) {
 
   const [input, setInput] = useState("hello");
 
-  let text = ["Random", "Sign In", "next", "Sign Up", "Ingredients"];
+  let text = ["Random", "Sign In", "next", "Sign Up", "Ingredients", "Log out"];
 
   function toggleOverLay(type) {
     if (type === "menu") {
@@ -56,6 +62,12 @@ export default function FirstPage({ fun, fun2, fun3 }) {
     setInputValue(event.target.value);
   }
 
+  function clearID() {
+    setSessionId(null);
+  }
+
+  const [backgroundColor, textColor] = generateBackgroundColors();
+
   return (
     <>
       <div style={style.page}>
@@ -81,11 +93,16 @@ export default function FirstPage({ fun, fun2, fun3 }) {
             isEditing={isEditing}
           />
           <But text={text[0]} className="colorY" fun={x} />
-          <But
-            text={text[1]}
-            className="colorY"
-            fun={() => toggleOverLay("signIn")}
-          />
+          {!SessionId && (
+            <But
+              text={text[1]}
+              className="colorY"
+              fun={() => toggleOverLay("signIn")}
+            />
+          )}
+          {SessionId && (
+            <But text={text[5]} className="colorY" fun={() => clearID(null)} />
+          )}
           {overLaySq && (
             <OverLaySq
               fun={() => toggleOverLay("signIn")}
@@ -93,15 +110,29 @@ export default function FirstPage({ fun, fun2, fun3 }) {
               fun3={fun3}
             />
           )}
-          <Profile />
+          <Profile color1={backgroundColor} color2={textColor} />
         </div>
         <div style={style.Main}>
           <Main input={input} />
         </div>
 
         <div className="h-alignEven" style={style.next}>
-          <But text={text[2]} className="colorY" fun={fun2} />
-          <But text={text[4]} className="colorY" fun={fun} />
+          {SessionId && <But text={text[2]} className="colorY" fun={fun2} />}
+          {!SessionId && (
+            <But
+              text={text[2]}
+              className="colorY"
+              fun={() => toggleOverLay("signIn")}
+            />
+          )}
+          {SessionId && <But text={text[4]} className="colorY" fun={fun} />}
+          {!SessionId && (
+            <But
+              text={text[4]}
+              className="colorY"
+              fun={() => toggleOverLay("signIn")}
+            />
+          )}
         </div>
       </div>
     </>
