@@ -1,4 +1,4 @@
-import "/Users/mymac/Desktop/rep project/my-react-app/src/components/Box/Box.css";
+import "./Box.css";
 import InputBox from "../InputBox/InputBox";
 
 export default function Box({ input }) {
