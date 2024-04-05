@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import "/Users/mymac/Desktop/rep project/my-react-app/src/components/OverLaySq.js/OverLaySq.css";
+import "./OverLaySq.css";
 import But from "../But/But";
 import MainContext from "../../GlobalState/MainContext";
 import style from "../Input/style";
