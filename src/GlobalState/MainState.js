@@ -9,6 +9,7 @@ const MainState = (props) => {
   const [classStates, setClassStates] = useState([true, true, true]);
   const [SessionId, setSessionId] = useState(null);
   const [Sym, setSym] = useState(null);
+  const [ProColor, setProColor] = useState(null);
 
   return (
     <MainContext.Provider
@@ -27,6 +28,8 @@ const MainState = (props) => {
         setSessionId,
         Sym,
         setSym,
+        ProColor,
+        setProColor,
       }}
     >
       {props.children}

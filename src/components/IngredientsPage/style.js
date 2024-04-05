@@ -35,6 +35,13 @@ const style = {
     fontSize: "20px",
     fontFamily: "Rubik",
   },
+  col: {
+    gap: "100px",
+  },
+  heading: {
+    marginLeft: "10%",
+    marginBottom: "30px",
+  },
 };
 
 export default style;

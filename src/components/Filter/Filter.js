@@ -45,18 +45,24 @@ function Filter1({ fun2, fun }) {
           </thead>
           <tbody className="inherit">
             <tr className="inherit">
-              <td onClick={fun2} style={style.pointer}>
+              <td onClick={fun2} style={style.pointer} className="h-align">
                 History
               </td>
             </tr>
             <tr>
-              <td style={style.pointer}>Account</td>
+              <td style={style.pointer} className="h-align">
+                Account
+              </td>
             </tr>
             <tr>
-              <td style={style.pointer}>Recipes</td>
+              <td style={style.pointer} className="h-align">
+                Recipes
+              </td>
             </tr>
             <tr>
-              <td style={style.pointer}>Ingredients</td>
+              <td style={style.pointer} className="h-align">
+                Ingredients
+              </td>
             </tr>
           </tbody>
         </table>

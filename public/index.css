@@ -1,12 +1,3 @@
-.App {
-  height: inherit;
-  margin: 0; /* Ensure no default margins */
-  padding: 0; /* Ensure no default padding */
-  background-image: url("/Users/mymac/Desktop/rep project/my-react-app/src/assets/Screenshot 2024-03-14 at 4.38.02 PM.png");
-  background-size: cover; /* Cover the entire background */
-  background-repeat: no-repeat; /* Do not repeat the background image */
-  background-position: center; /* Center the background image */
-}
 .v-align {
   display: flex;
   flex-direction: column;
@@ -32,11 +23,6 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
-.v-alignEven {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
 .center {
   display: flex;
   flex-direction: row;
@@ -55,7 +41,4 @@
 }
 h3 {
   margin: 0px;
-}
-.colorG {
-  background-color: #189f18;
 }

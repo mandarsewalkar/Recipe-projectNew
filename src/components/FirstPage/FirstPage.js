@@ -8,9 +8,8 @@ import OverLay from "../OverLay/OverLay";
 import OverLaySq from "../OverLaySq.js/OverLaySq";
 import Profile from "../Profile/Profile";
 import style from "./FirstPageStyle";
-import generateBackgroundColors from "../color/color";
 
-export default function FirstPage({ fun, fun2, fun3 }) {
+export default function FirstPage({ fun, fun2, fun3, fun4 }) {
   const {
     inputValue,
     setInputValue,
@@ -20,17 +19,23 @@ export default function FirstPage({ fun, fun2, fun3 }) {
     setIsEditing,
     SessionId,
     setSessionId,
-    user,
-    Sym,
-    setSym,
   } = useContext(MainContext);
 
   const [overLay, setOverLay] = useState(false);
   const [overLaySq, setOverLaySq] = useState(false);
 
   const [input, setInput] = useState("hello");
+  const [Rand, setRand] = useState(null);
 
-  let text = ["Random", "Sign In", "next", "Sign Up", "Ingredients", "Log out"];
+  let text = [
+    "Random",
+    "Sign In",
+    "next",
+    "Sign Up",
+    "Ingredients",
+    "Log out",
+    "Instructions",
+  ];
 
   function toggleOverLay(type) {
     if (type === "menu") {
@@ -42,6 +47,7 @@ export default function FirstPage({ fun, fun2, fun3 }) {
 
   function x() {
     let num = Math.floor(Math.random() * 10);
+    setRand(num);
     console.log(num);
   }
 
@@ -66,7 +72,30 @@ export default function FirstPage({ fun, fun2, fun3 }) {
     setSessionId(null);
   }
 
-  const [backgroundColor, textColor] = generateBackgroundColors();
+  const backgroundColor = [
+    "#ad4dbe",
+    "#7e27a5",
+    // "#7c949f", //light
+    "#4c5f6a",
+    "#ed487e",
+    "#c42360",
+    "#6170c2",
+    "#158cd3",
+    "#0f5c9f",
+    "#199ba9",
+    "#158c7e",
+    "#0d5246",
+    "#6ca240",
+    "#3a6e26",
+    "#f07114",
+    "#907368",
+    "#825cc4",
+    "#5734aa",
+    "#f65727",
+    "#c13d19",
+  ];
+
+  const color1 = backgroundColor[3 - 1];
 
   return (
     <>
@@ -110,10 +139,11 @@ export default function FirstPage({ fun, fun2, fun3 }) {
               fun3={fun3}
             />
           )}
-          <Profile color1={backgroundColor} color2={textColor} />
+          <Profile color1={color1} />
         </div>
         <div style={style.Main}>
-          <Main input={input} />
+          {Rand === null && <Main input={input} />}
+          {Rand != null && <Main input={Rand} />}
         </div>
 
         <div className="h-alignEven" style={style.next}>
@@ -129,6 +159,14 @@ export default function FirstPage({ fun, fun2, fun3 }) {
           {!SessionId && (
             <But
               text={text[4]}
+              className="colorY"
+              fun={() => toggleOverLay("signIn")}
+            />
+          )}
+          {SessionId && <But text={text[6]} className="colorY" fun={fun4} />}
+          {!SessionId && (
+            <But
+              text={text[6]}
               className="colorY"
               fun={() => toggleOverLay("signIn")}
             />

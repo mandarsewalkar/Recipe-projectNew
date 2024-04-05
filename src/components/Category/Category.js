@@ -18,7 +18,11 @@ export default function Category() {
 
   return (
     <>
-      <div style={style.pointer} onClick={() => setClicked(!clicked)}>
+      <div
+        style={style.pointer}
+        className="h-align"
+        onClick={() => setClicked(!clicked)}
+      >
         Category
       </div>
       {clicked &&

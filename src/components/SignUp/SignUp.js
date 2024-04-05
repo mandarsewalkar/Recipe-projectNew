@@ -15,11 +15,38 @@ export default function SignUp({ fun }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const backgroundColor = [
+      "#ad4dbe",
+      "#7e27a5",
+      // "#7c949f", //light
+      "#4c5f6a",
+      "#ed487e",
+      "#c42360",
+      "#6170c2",
+      "#158cd3",
+      "#0f5c9f",
+      "#199ba9",
+      "#158c7e",
+      "#0d5246",
+      "#6ca240",
+      "#3a6e26",
+      "#f07114",
+      "#907368",
+      "#825cc4",
+      "#5734aa",
+      "#f65727",
+      "#c13d19",
+    ];
+
+    const num = Math.floor(Math.random() * backgroundColor.length);
+    const color = backgroundColor[num];
+
     const formData = {
       Name: event.target.Name.value,
       email: event.target.email.value,
       password: event.target.password.value,
       confirmPassword: event.target.confirmPassword.value,
+      ProfileColor: color,
     };
 
     if (formData.password !== formData.confirmPassword) {

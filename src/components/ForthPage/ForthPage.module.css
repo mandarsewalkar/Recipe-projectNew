@@ -1,26 +1,26 @@
+.ForthPage {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100%;
+}
+
+/* .Recipe-div {
+  text-align: center;
+  height: 700px;
+  width: 500px;
+} */
+
+/* .Recipe-div h1 {
+  font-weight: bold;
+} */
+
 /* .ForthPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
-}
-
-.Recipe-div {
-  text-align: center;
-  height: 700px;
-  width: 500px;
-}
-
-.Recipe-div h1 {
-  font-weight: bold;
+  height: inherit;
 } */
-
-.ForthPage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
 .LeftBar,
 .RightBar {

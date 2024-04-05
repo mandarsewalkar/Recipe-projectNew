@@ -1,15 +1,12 @@
 import { useContext, useEffect } from "react";
 import MainContext from "../../GlobalState/MainContext";
 
-export default function Profile({ color1, color2 }) {
-  const { SessionId, user, setSym, Sym } = useContext(MainContext);
-
+export default function Profile() {
+  const { SessionId, user, setSym, Sym, ProColor } = useContext(MainContext);
   let c1 = null;
-  let c2 = null;
-
   if (SessionId) {
-    c1 = color1;
-    c2 = color2;
+    c1 = ProColor;
+    console.log(c1);
   }
 
   useEffect(() => {
@@ -20,13 +17,11 @@ export default function Profile({ color1, color2 }) {
     }
   }, [user, setSym]);
 
-  let i = Math.floor(Math.random() * 2);
-
   const style = {
     radCir: { borderRadius: "100px" },
     svg: {
       backgroundColor: c1,
-      color: c2,
+      color: "white",
       height: "40px",
       width: "40px",
       border: "1px solid black",

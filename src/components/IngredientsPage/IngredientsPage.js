@@ -1,15 +1,20 @@
 import But from "../But/But";
 import style from "./style";
 
-export default function IngredientsPage({ fun, recipes }) {
-  const randomIndex = Math.floor(Math.random() * recipes.length);
-  const recipe = recipes[randomIndex];
+export default function IngredientsPage({ fun, recipe, fun2 }) {
+  // const randomIndex = Math.floor(Math.random() * recipes.length);
+  // const recipe = recipes[randomIndex];
 
   // console.log(recipes);
 
   return (
     <div className="v-align , inherit">
-      <div className="h-align">
+      <div className="center" style={style.col}>
+        <div className="v-alignEven">
+          <But text="HOME PAGE" className="colorR" fun={fun} />
+          <But text="BUY" className="colorG" fun={fun2} />
+        </div>
+
         {recipe && (
           <div style={style.card}>
             <div
@@ -20,7 +25,7 @@ export default function IngredientsPage({ fun, recipes }) {
                 {recipe.title}
               </h2>
             </div>
-            <h3>Ingredients:</h3>
+            <h3 style={style.heading}>Ingredients:</h3>
             <div className="h-align">
               <div style={style.innerCard} className="h-align">
                 <div className="inherit" style={style.list}>
@@ -52,8 +57,9 @@ export default function IngredientsPage({ fun, recipes }) {
           </div>
         )}
       </div>
-      <div className="center">
+      <div className="h-align">
         <But text="HOME PAGE" className="colorY" fun={fun} />
+        <But text="INSTRUCTIONS" className="colorY" fun={fun2} />
       </div>
     </div>
   );

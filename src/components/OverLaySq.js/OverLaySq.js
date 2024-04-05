@@ -10,7 +10,8 @@ export default function OverLaySq(props) {
   const { fun, overLay, fun3, text } = props;
   const storedData = localStorage.getItem("formDataList");
   const data = JSON.parse(storedData);
-  const { setUser, SessionId, setSessionId } = useContext(MainContext);
+  const { setUser, SessionId, setSessionId, setProColor, ProColor } =
+    useContext(MainContext);
 
   // State variables
   const [correct, setCorrect] = useState(false);
@@ -33,6 +34,7 @@ export default function OverLaySq(props) {
       console.log("Sign-in successful!");
       fun(() => fun);
       setUser(foundUser.Name);
+      setProColor(foundUser.ProfileColor);
       const ID = Math.floor(Math.random() * 99999);
       setSessionId(ID);
       console.log(SessionId);

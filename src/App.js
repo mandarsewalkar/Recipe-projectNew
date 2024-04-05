@@ -42,9 +42,7 @@ function App() {
           dish = `Gluten free ${dish}`;
         }
 
-        // const url = `https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=${dish}`;
-        const url = `
-        https://api.edamam.com/search?app_id=900da95e&app_key=40698503668e0bb3897581f4766d77f9&q=double%20cheese%20pizza`;
+        const url = `https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=${dish}`;
         const options = {
           method: "GET",
           headers: {
@@ -80,23 +78,37 @@ function App() {
     setPage(0);
   }
 
+  function Instructions() {
+    setPage(3);
+  }
+
   function Sign() {
     setSignUp(!signUp);
     console.log(signUp);
   }
+
+  const randomIndex = Math.floor(Math.random() * recipes.length);
+  const recipe = recipes[randomIndex];
 
   // Generate a random integer within the valid range of array indices
 
   return (
     <div className="App">
       {page === 0 && !signUp && (
-        <FirstPage fun={ingredient} fun2={randNXT} fun3={Sign} />
+        <FirstPage
+          fun={ingredient}
+          fun2={randNXT}
+          fun3={Sign}
+          fun4={Instructions}
+        />
       )}
       {page === 1 && !signUp && <SecondPage fun={homePage} fun2={ingredient} />}
       {page === 2 && !signUp && (
-        <IngredientsPage fun={homePage} recipes={recipes} />
+        <IngredientsPage fun={homePage} fun2={Instructions} recipe={recipe} />
       )}
-      {page === 3 && <ForthPage />}
+      {page === 3 && (
+        <ForthPage fun={homePage} fun2={ingredient} recipe={recipe} />
+      )}
 
       {signUp && <SignUp fun={Sign} />}
       {/* Render other pages here */}
