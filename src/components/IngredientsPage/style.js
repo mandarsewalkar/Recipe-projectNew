@@ -42,6 +42,20 @@ const style = {
     marginLeft: "10%",
     marginBottom: "30px",
   },
+  buy: {
+    width: "80%",
+  },
+  checkBox: {
+    width: "30px",
+    height: "30px",
+    margin: "0px",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "Flex-end",
+  },
+  a: {
+    alignSelf: "center",
+  },
 };
 
 export default style;

@@ -6,7 +6,6 @@ import SignUp from "./components/SignUp/SignUp";
 import ForthPage from "./components/ForthPage/ForthPage";
 import MainContext from "./GlobalState/MainContext";
 import IngredientsPage from "./components/IngredientsPage/IngredientsPage";
-import MainState from "./GlobalState/MainState";
 
 function App() {
   const [page, setPage] = useState(0);
@@ -95,28 +94,24 @@ function App() {
 
   return (
     <div className="App">
-      <MainState>
-        {page === 0 && !signUp && (
-          <FirstPage
-            fun={ingredient}
-            fun2={randNXT}
-            fun3={Sign}
-            fun4={Instructions}
-          />
-        )}
-        {page === 1 && !signUp && (
-          <SecondPage fun={homePage} fun2={ingredient} />
-        )}
-        {page === 2 && !signUp && (
-          <IngredientsPage fun={homePage} fun2={Instructions} recipe={recipe} />
-        )}
-        {page === 3 && (
-          <ForthPage fun={homePage} fun2={ingredient} recipe={recipe} />
-        )}
+      {page === 0 && !signUp && (
+        <FirstPage
+          fun={ingredient}
+          fun2={randNXT}
+          fun3={Sign}
+          fun4={Instructions}
+        />
+      )}
+      {page === 1 && !signUp && <SecondPage fun={homePage} fun2={ingredient} />}
+      {page === 2 && !signUp && (
+        <IngredientsPage fun={homePage} fun2={Instructions} recipe={recipe} />
+      )}
+      {page === 3 && (
+        <ForthPage fun={homePage} fun2={ingredient} recipe={recipe} />
+      )}
 
-        {signUp && <SignUp fun={Sign} />}
-        {/* Render other pages here */}
-      </MainState>
+      {signUp && <SignUp fun={Sign} />}
+      {/* Render other pages here */}
     </div>
   );
 }
